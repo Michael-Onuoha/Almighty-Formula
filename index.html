@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadratic Solver</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Quadratic Solver</h1>
+        
+        <div class="equation-container">
+            <input type="text" id="a-input" placeholder="a" />
+            <span>x²</span>
+            <span>+</span>
+            <input type="text" id="b-input" placeholder="b" />
+            <span>x</span>
+            <span>+</span>
+            <input type="text" id="c-input" placeholder="c" />
+            <span>=</span>
+            <span>0</span>
+        </div>
+
+        <button onclick="calculate()">Solve</button>
+
+        <div class="results">
+            <div class="result-item">
+                <span>X Value:</span>
+                <div id="output1" class="output-bar"></div> <!-- Output for x value -->
+            </div>
+            <div class="result-item">
+                <span>Y Value:</span>
+                <div id="output2" class="output-bar"></div> <!-- Output for y value -->
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="index.js"></script>    
+</html>

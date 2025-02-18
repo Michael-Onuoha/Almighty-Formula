@@ -18,24 +18,31 @@
             <span>x</span>
             <span>+</span>
             <input type="text" id="c-input" placeholder="c" />
-            <span>=</span>
-            <span>0</span>
+            <span>= 0</span>
         </div>
 
         <button onclick="calculate()">Solve</button>
 
         <div class="results">
             <div class="result-item">
-                <span>X Value:</span>
-                <div id="output1" class="output-bar"></div> <!-- Output for x value -->
+                <span>X₁:</span>
+                <div id="output1" class="output-bar"></div>
             </div>
             <div class="result-item">
-                <span>Y Value:</span>
-                <div id="output2" class="output-bar"></div> <!-- Output for y value -->
+                <span>X₂:</span>
+                <div id="output2" class="output-bar"></div>
             </div>
         </div>
-
+        
+        <div id="notification" class="notification">
+            <span id="notification-message">Invalid Input</span>
+        </div>
     </div>
+    <footer>
+        <p>Made with 🧠 by Michael Onuoha</p>
+    </footer>s
+    
 </body>
 <script src="index.js"></script>    
+
 </html>

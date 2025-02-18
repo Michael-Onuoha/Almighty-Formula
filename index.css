@@ -9,6 +9,33 @@ body {
     align-items: center;
     justify-content: center;
 }
+html, body {
+    overflow: hidden;
+    height: 100%;
+}
+.notification {
+    position: fixed;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(255, 0, 0);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.1s, bottom 0.5s;
+}
+
+.notification.show {
+    opacity: 1;
+    visibility: visible;
+    bottom: 20px;
+}
 
 .container {
     background: white;
@@ -21,8 +48,9 @@ body {
 
 h1 {
     margin: 0 0 2rem 0;
-    font-size: 1.5rem;
+    font-style: bold;
     color: #333;
+    text-align: center;
 }
 
 .equation-container {
@@ -31,6 +59,7 @@ h1 {
     gap: 0.5rem;
     margin-bottom: 1.5rem;
     font-size: 1.2rem;
+    justify-content: center;
 }
 
 input {
@@ -95,13 +124,69 @@ button:hover {
     flex-shrink: 0; /* Prevent label from shrinking */
 }
 
-@media (min-width: 600px) {
-    .results {
-        flex-direction: row; /* Display in row for larger screens */
-        justify-content: space-between;
+
+
+
+
+/* Media Queries for Mobile Responsiveness */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 20px;
     }
 
-    .result-item {
-        margin-bottom: 0;
+    .container {
+        width: 300px;
+        height: 400px;
+        font-size: 16px;
+        padding: 15px;
+        gap: 5px;
     }
+
+    input {
+        width: 45px;
+        padding: 6px;
+        font-size: 16px;
+    }
+
+    .solve-button {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    .output {
+        font-size: 16px;
+    }
+
+    .notification{
+        width: 300px;
+    }
+}
+
+
+/* For landscape orientation on mobile */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        margin-bottom: 10px;
+    }
+
+    .equation-container {
+        margin-bottom: 10px;
+    }
+
+    .results {
+        margin: 10px auto;
+    }
+}
+footer {
+    text-align: center;
+    font-size: 1rem;
+    color: #555;
+    padding: 1rem;
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
 }

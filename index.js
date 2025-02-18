@@ -40,15 +40,21 @@ function calculate() {
             output2.innerHTML = `${x2}`;
             notification.innerHTML = "This is a perfect square 👍";
             notification.style.backgroundColor = "green";
-            notification.classList.add("show")
+            notification.classList.add("show");
             setTimeout(() => {
-                notification.classList.remove("show")
+                notification.classList.remove("show");
                 console.log("Now executing after 2 seconds!");
             }, 2000);
-         
         } else {
-            output1.innerHTML = `${formatFraction(`-${b} + √${discriminant}`, 2 * a)}`;
-            output2.innerHTML = `${formatFraction(`-${b} - √${discriminant}`, 2 * a)}`;
+            let formattedX1 = formatFraction(`-${b} + √${discriminant}`, 2 * a);
+            let formattedX2 = formatFraction(`-${b} - √${discriminant}`, 2 * a);
+        
+            // Replace '--' with '+'
+            formattedX1 = formattedX1.replace(/--/g, '+');
+            formattedX2 = formattedX2.replace(/--/g, '+');
+        
+            output1.innerHTML = formattedX1;
+            output2.innerHTML = formattedX2;
         }
     } else if (discriminant === 0) {
         // One real root
